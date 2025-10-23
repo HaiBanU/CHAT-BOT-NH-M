@@ -1,9 +1,8 @@
-# file: main_bot.py (PHIÊN BẢN WEB SERVER)
+# file: main_bot.py (PHIÊN BẢN SỬA LỖI HOÀN CHỈNH)
 
 import telegram
 import asyncio
 import random
-import time
 import os
 import threading
 from flask import Flask
@@ -19,7 +18,7 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-# --- PHẦN CẤU HÌNH CHO BOT (Giữ nguyên như cũ) ---
+# --- PHẦN CẤU HÌNH CHO BOT ---
 TIME_WINDOWS = {
     "morning": (8, 11), "noon": (12, 13), "afternoon": (15, 17),
     "evening": (20, 22), "late_night": (23, 1), "interaction": (0, 23),
@@ -33,10 +32,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Đây là trang web mà UptimeRobot sẽ truy cập để giữ cho bot "thức"
     return "Bot is alive and running!"
 
-# --- PHẦN LOGIC CỦA BOT (Giữ nguyên như cũ) ---
+# --- PHẦN LOGIC CỦA BOT ---
 bot = telegram.Bot(token=BOT_TOKEN)
 recent_messages = {
     category: deque(maxlen=AVOID_LAST_N_MESSAGES)
@@ -60,9 +58,10 @@ async def send_message(message):
     except Exception as e:
         print(f"❌ Lỗi khi gửi tin nhắn: {e}")
 
-def run_bot_logic():
-    """Vòng lặp chính của bot, sẽ chạy trên một luồng riêng."""
-    print("Bot logic is starting...")
+# <<< THAY ĐỔI 1: Chuyển toàn bộ logic bot sang hàm async >>>
+async def bot_main_loop():
+    """Vòng lặp bất đồng bộ chính của bot."""
+    print("▶️  Bot logic is starting...")
     next_send_time = {}
     for category in SCENARIOS.keys():
         delay = random.randint(MESSAGE_INTERVAL_MINUTES[0], MESSAGE_INTERVAL_MINUTES[1])
@@ -81,20 +80,34 @@ def run_bot_logic():
             if in_window and now >= next_send_time.get(category, now):
                 message = get_unique_random_message(category)
                 if message:
-                    asyncio.run(send_message(message))
+                    # <<< THAY ĐỔI 2: Dùng await trực tiếp >>>
+                    await send_message(message)
+                
                 delay = random.randint(MESSAGE_INTERVAL_MINUTES[0], MESSAGE_INTERVAL_MINUTES[1])
                 next_send_time[category] = now + timedelta(minutes=delay)
-                time.sleep(5)
-        time.sleep(10)
+                
+                # <<< THAY ĐỔI 3: Dùng asyncio.sleep thay vì time.sleep >>>
+                await asyncio.sleep(5)
+                
+        await asyncio.sleep(10)
+
+def run_flask_server():
+    port = int(os.environ.get('PORT', 10000))
+    print(f"🌐 Khởi động máy chủ web trên cổng {port}...")
+    app.run(host='0.0.0.0', port=port)
 
 # --- KHỞI ĐỘNG ---
 if __name__ == "__main__":
-    # Chạy logic của bot trong một luồng (thread) riêng để không làm treo web server
-    bot_thread = threading.Thread(target=run_bot_logic)
-    bot_thread.daemon = True
-    bot_thread.start()
+    print("🚀 Script bắt đầu thực thi...")
 
-    # Chạy web server
-    # Render sẽ sử dụng biến môi trường PORT, nên chúng ta cần đọc nó
-    port = int(os.environ.get('PORT', 10000))
-    app.run(host='0.0.0.0', port=port)
+    if not BOT_TOKEN or not CHAT_ID:
+        print("❌ LỖI NGHIÊM TRỌNG: Thiếu BOT_TOKEN hoặc CHAT_ID!")
+    else:
+        print("✅ Biến môi trường đã được tải.")
+        # <<< THAY ĐỔI 4: Khởi động bot theo đúng chuẩn >>>
+        bot_thread = threading.Thread(target=lambda: asyncio.run(bot_main_loop()))
+        bot_thread.daemon = True
+        bot_thread.start()
+
+    # Chạy Flask trong luồng chính
+    run_flask_server()
