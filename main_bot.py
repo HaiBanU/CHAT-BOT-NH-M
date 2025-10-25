@@ -21,13 +21,13 @@ CHAT_ID = os.getenv("CHAT_ID")
 # --- PHẦN CẤU HÌNH CHO BOT ---
 # <<< THAY ĐỔI 1: CẬP NHẬT LẠI CÁC KHUNG GIỜ HOẠT ĐỘNG >>>
 TIME_WINDOWS = {
-    "morning": (7, 11),  # Bắt đầu từ 7h sáng
+    "morning": (6, 11),  # Bắt đầu từ 6h30
     "noon": (12, 13),
     "afternoon": (15, 17),
     "evening": (20, 22),
-    "late_night": (23, 23), # Chỉ hoạt động trong khung 23h
-    "interaction": (7, 23), # Hoạt động từ 7h đến 23h
-    "experience_motivation": (7, 23) # Hoạt động từ 7h đến 23h
+    "late_night": (23, 23), # Hoạt động trong khung 23h (đến 23h30)
+    "interaction": (6, 23), # Hoạt động từ 6h30 đến 23h30
+    "experience_motivation": (6, 23) # Hoạt động từ 6h30 đến 23h30
 }
 MESSAGE_INTERVAL_MINUTES = (15, 35)
 AVOID_LAST_N_MESSAGES = 25
@@ -76,9 +76,10 @@ async def bot_main_loop():
         current_hour = now.hour
         current_minute = now.minute
 
-        # <<< THAY ĐỔI 2: THÊM LOGIC "NGỦ" CHO BOT >>>
-        # Bot sẽ "ngủ" từ 23:31 đến 06:59 sáng hôm sau
-        is_sleeping_time = (current_hour == 23 and current_minute > 30) or current_hour < 7
+        # <<< THAY ĐỔI 2: CẬP NHẬT LOGIC "NGỦ" CHO BOT >>>
+        # Bot sẽ "ngủ" từ 23:31 đến 06:29 sáng hôm sau
+        is_sleeping_time = (current_hour == 23 and current_minute > 30) or current_hour < 6 or (current_hour == 6 and current_minute < 30)
+        
         if is_sleeping_time:
             print(f"😴 [{now.strftime('%H:%M:%S')}] Bot đang trong giờ nghỉ ngơi... Sẽ kiểm tra lại sau 1 phút.")
             await asyncio.sleep(60) # Tạm dừng 1 phút rồi kiểm tra lại

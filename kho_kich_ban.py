@@ -101,7 +101,20 @@ SCENARIOS = {
         "tôi đang hơi phân vân",
         "có nên vào tay này không nhỉ",
         "thôi liều một phen",
-        "sáng ra mà đã toát mồ hôi rồi"
+        "sáng ra mà đã toát mồ hôi rồi",
+        "6h30 rồi, điểm danh anh em chiến hữu.",
+        "Mở mắt ra là thấy nhớ bàn cược rồi.",
+        "Sáng sớm cầu chạy mượt không anh em?",
+        "Làm tách trà nóng rồi vào soi cầu cho tỉnh táo.",
+        "Hôm nay mục tiêu kiếm bữa sáng cafe thôi.",
+        "Vừa vào làm nhẹ một tay khởi động.",
+        "Anh em nào có cầu thơm thì phím tôi với nhé.",
+        "Cầu sáng sớm thường hay biến động, anh em cẩn thận.",
+        "Ai bắt được dây bệt từ sớm không?",
+        "Bắt đầu ngày mới bằng một tay thắng cho may mắn nào.",
+        "Sáng nay tôi có linh cảm tốt lắm.",
+        "Vốn mỏng nên chỉ dám vào từ từ.",
+        "Cứ phải quan sát vài ván rồi mới dám xuống tiền."
     ],
     # --- Kịch bản buổi trưa (12h - 13h) ---
     "noon": [
@@ -197,7 +210,17 @@ SCENARIOS = {
         "cơ hội còn nhiều",
         "tôi đi nạp năng lượng đây",
         "chiều nay sẽ khác",
-        "tôi hứa đấy"
+        "tôi hứa đấy",
+        "Sáng nay tạm lãi ổ bánh mì, chiều tính tiếp.",
+        "Nghỉ trưa nạp đạn chiều bắn phá nhà cái nào.",
+        "Có ai ăn trưa mà vẫn đang soi cầu như tôi không?",
+        "Tạm chốt phiên sáng, lãi được cốc cafe.",
+        "Thôi nghỉ ngơi lấy sức, chiều gỡ lại cả vốn lẫn lãi.",
+        "Cầu kèo giờ nghỉ trưa khó đoán lắm, anh em đừng vội.",
+        "Ăn xong làm ván cho tiêu cơm nào.",
+        "Sáng nay ai đỏ cho tôi xin vía chiều với.",
+        "Đói quá, tay run không dám vào lệnh.",
+        "Chúc anh em ăn trưa ngon miệng, chiều húp đậm nhé."
     ],
     # --- Kịch bản buổi chiều (15h - 17h) ---
     "afternoon": [
@@ -296,7 +319,17 @@ SCENARIOS = {
         "giữ gìn sức khỏe còn chiến đấu lâu dài",
         "anh em đừng quên nhé",
         "thôi chào anh em",
-        "tối gặp lại"
+        "tối gặp lại",
+        "Vừa họp vừa soi cầu, đúng là đam mê.",
+        "Sắp tan làm rồi, ngứa tay quá anh em ạ.",
+        "Cầu chiều nay đi khó chịu thật sự.",
+        "Làm ván giải ngố sau giờ làm việc căng thẳng.",
+        "Vừa tan làm là phải vào nhóm xem tình hình ngay.",
+        "Chiều nay có vẻ êm đềm hơn sáng.",
+        "Có ai đang bắt được dây bệt chiều không?",
+        "Làm tay cuối kiếm tiền đổ xăng về nhà nào.",
+        "Về đến nhà rồi, giờ mới toàn tâm toàn ý được.",
+        "Anh em chuẩn bị cho phiên tối chưa?"
     ],
     # --- Kịch bản buổi tối (20h - 22h) ---
     "evening": [
@@ -388,7 +421,19 @@ SCENARIOS = {
         "cầu đang đi đúng ý tôi",
         "không thể tuyệt vời hơn",
         "cảm ơn cuộc đời",
-        "tối nay tôi sẽ có một giấc ngủ ngon"
+        "tối nay tôi sẽ có một giấc ngủ ngon",
+        "Giờ hoàng đạo đã điểm, anh em lên thuyền!",
+        "Tối nay quyết khô máu với nhà cái.",
+        "Anh em ăn tối cả chưa, vào việc thôi.",
+        "Cầu tối nay có vẻ dễ bắt hơn ban ngày.",
+        "Làm vài tay kiếm tiền mai đi chợ nào.",
+        "Tối nay là cơ hội để gỡ lại những gì đã mất.",
+        "Ai đang xa bờ thì bơi vào đây với tôi.",
+        "Tập trung cao độ, không để nhà cái lừa.",
+        "Tay này tôi rất kết, anh em theo không?",
+        "Vừa húp được một dây thông, sướng rơn người.",
+        "Tối nay mà thắng lớn mai tôi mời cả nhóm cafe.",
+        "Cầu đang đi đẹp, hy vọng không gãy đột ngột."
     ],
     # --- Kịch bản đêm khuya (Sau 23h) ---
     "late_night": [
@@ -474,7 +519,17 @@ SCENARIOS = {
         "và tôi sẽ tìm được một con đường mới",
         "cho cuộc đời mình",
         "cảm ơn anh em đã lắng nghe",
-        "tạm biệt"
+        "tạm biệt",
+        "Thêm một đêm mất ngủ vì nến.",
+        "Thôi đóng bảng điện đi ngủ, mai còn sức cày cuốc.",
+        "Càng về đêm càng khó chơi, tôi xin phép nghỉ trước.",
+        "Chốt sổ hôm nay, may mà vẫn có lãi.",
+        "Hôm nay đen quá, tôi đi ngủ sớm lấy lại tinh thần.",
+        "Anh em nào còn chiến đấu thì may mắn nhé, tôi ngủ đây.",
+        "Đêm khuya rồi, chơi dễ mất kiểm soát lắm.",
+        "Hẹn gặp lại anh em vào sáng mai.",
+        "Thôi dừng thôi, không lại bay hết thành quả cả ngày.",
+        "Một ngày mệt mỏi, chúc anh em ngủ ngon."
     ],
     # --- Kịch bản tự vấn / Than thở ---
     "experience_motivation": [
@@ -566,7 +621,19 @@ SCENARIOS = {
         "thôi kệ",
         "điên cũng được",
         "miễn là tôi vẫn còn sống",
-        "và còn hy vọng"
+        "và còn hy vọng",
+        "Cờ bạc không bao giờ là dễ dàng.",
+        "Thắng không tự mãn, thua không nản lòng, đó mới là cao thủ.",
+        "Lòng tham là kẻ thù lớn nhất.",
+        "Chỉ một phút mất bình tĩnh là trả giá đắt.",
+        "Phải học cách chấp nhận thất bại và đứng lên.",
+        "Kiếm tiền đã khó, giữ tiền còn khó hơn.",
+        "Đừng bao giờ để con bạc át đi con người.",
+        "Mỗi lần thua là một lần học được thêm kinh nghiệm.",
+        "Hôm nay có thể thua, nhưng ngày mai phải gỡ lại.",
+        "Anh em nào đang thua thì đừng nản, cơ hội luôn còn ở phía trước.",
+        "Cờ bạc là bộ môn của tâm lý và kỷ luật.",
+        "Hãy coi đây là một cuộc đầu tư, không phải một trò may rủi."
     ],
     # --- Kịch bản tương tác / Đặt câu hỏi ---
     "interaction": [
@@ -656,6 +723,18 @@ SCENARIOS = {
         "không lại bị chửi là khùng",
         "tạm biệt nhé",
         "lát nữa gặp lại",
-        "yêu cả nhà"
+        "yêu cả nhà",
+        "Cầu này có vẻ khó, anh em có cao kiến gì không?",
+        "Theo anh em tay này nên vào bao nhiêu % vốn?",
+        "Có ai đang theo dõi bàn 6 không, cầu bên đó thế nào rồi?",
+        "Tay này tôi đặt niềm tin vào cửa Banker, ai theo không?",
+        "Bệt 5 tay rồi, có nên bẻ không anh em?",
+        "Nhóm mình có ai là chuyên gia soi cầu không, cho tôi xin ít lời khuyên.",
+        "Tình hình anh em hôm nay thế nào rồi?",
+        "Sao dạo này nhóm ít tương tác thế nhỉ, anh em lên tiếng đi cho xôm.",
+        "Ai có phương pháp quản lý vốn hay thì chia sẻ cho mọi người với.",
+        "Tay này tôi không chắc lắm, có ai có nhận định gì không?",
+        "Mọi người thường dùng chỉ báo nào để soi cầu thế?",
+        "Có ai biết sảnh nào đang có cầu đẹp không?"
     ]
 }
